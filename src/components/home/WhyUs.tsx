@@ -21,7 +21,7 @@ const WhyUs = () => {
                     {t("whyUs.description")}
                 </p>
 
-                <div className="flex md:gap-8 gap-[65px] !mt-10">
+                <div className="flex flex-wrap md:gap-8 gap-10 !mt-10">
                     <div className="flex flex-col">
                         <p className="text-[#00567E] rtl:md:text-[48px] ltr:md:text-4xl text-xl font-semibold leading-[150%]">
                             +5000
