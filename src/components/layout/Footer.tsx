@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import Logo from "../icons/Logo";
 import FooterLogo from "../icons/FooterLogo";
 import { getSocialLinks, type SocialLinks } from "../../lib/api/social";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const FOOTER_LINKS = [
   { label: "header.home", href: "#hero" },
@@ -14,17 +15,6 @@ const FOOTER_LINKS = [
   { label: "header.testimonials", href: "#testimonials" },
   { label: "header.howToBook", href: "#how-to-book" },
 ];
-
-function handleScrollTo(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
-  e.preventDefault();
-  const id = href.replace("#", "");
-  const el = document.getElementById(id);
-  if (el) {
-    el.scrollIntoView({ behavior: "smooth" });
-  } else if (id === "hero") {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-}
 
 function InstagramIcon() {
   return (
@@ -97,7 +87,29 @@ function FacebookIcon() {
 
 export default function Footer() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
+  function handleScrollTo(
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) {
+    e.preventDefault();
+    const id = href.replace("#", "");
+
+    // If not on home page
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollTo: id } });
+      return;
+    }
+
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else if (id === "hero") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
   const {
     data: social,
     isLoading,
@@ -143,9 +155,8 @@ export default function Footer() {
                     key={link.href}
                     href={link.href}
                     onClick={(e) => handleScrollTo(e, link.href)}
-                    className={`text-xl leading-none text-white transition-opacity hover:opacity-80 ${
-                      link.href === "#hero" ? "font-semibold" : "font-medium"
-                    }`}
+                    className={`text-xl leading-none text-white transition-opacity hover:opacity-80 ${link.href === "#hero" ? "font-semibold" : "font-medium"
+                      }`}
                   >
                     {t(link.label)}
                   </a>
