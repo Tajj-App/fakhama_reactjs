@@ -307,6 +307,7 @@ export default function Header() {
 
               <button
                 onClick={toggleLanguage}
+                aria-label="Toggle language"
                 className="flex items-center justify-center rounded-full border border-[#0478AF] w-full h-12 text-[#00567E] font-bold text-xs mt-4!"
               >
                 <svg
