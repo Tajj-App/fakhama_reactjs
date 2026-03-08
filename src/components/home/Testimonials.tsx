@@ -161,7 +161,7 @@ export default function Testimonials() {
                 </div>
 
                 {/* Pagination Dots */}
-                <div dir="ltr" className="flex items-center gap-1">
+                <div dir="ltr" className="flex items-center gap-2">
                   {testimonials.map((_, index) => (
                     <button
                       key={index}
@@ -169,7 +169,8 @@ export default function Testimonials() {
                       className={`rounded-full transition-all duration-300 ${index === activeIndex
                         ? "w-6 h-2 bg-[#0478AF]"
                         : "w-2 h-2 bg-[#D2D1D1]"
-                        }`}
+                        }
+        p-4`}
                       aria-label={`الشهادة ${index + 1}`}
                     />
                   ))}
