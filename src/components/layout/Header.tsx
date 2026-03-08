@@ -215,6 +215,11 @@ export default function Header() {
             </button>
             <button
               onClick={toggleLanguage}
+              aria-label={
+                i18n.language === "ar"
+                  ? "Switch language to English"
+                  : "تغيير اللغة إلى العربية"
+              }
               className="flex items-center justify-center rounded-full border border-[#D2D1D1] w-14 h-14 text-[#0478AF] hover:bg-[#0478AF] hover:text-white transition-colors duration-200 font-semibold"
             >
               <Language />
@@ -307,7 +312,11 @@ export default function Header() {
 
               <button
                 onClick={toggleLanguage}
-                aria-label="Toggle language"
+                aria-label={
+                  i18n.language === "ar"
+                    ? "Switch language to English"
+                    : "تغيير اللغة إلى العربية"
+                }
                 className="flex items-center justify-center rounded-full border border-[#0478AF] w-full h-12 text-[#00567E] font-bold text-xs mt-4!"
               >
                 <svg
