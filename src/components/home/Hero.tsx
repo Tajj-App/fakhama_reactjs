@@ -84,6 +84,10 @@ const Hero = () => {
           <motion.img
             src="/images/hero1.webp"
             alt="hero image"
+            width="276"
+            height="284"
+            loading="lazy"
+            decoding="async"
             className="md:w-[276px] w-[163px] md:h-[633px] h-[374px] rounded-[50px] object-cover"
             variants={fadeInUp}
           />
@@ -91,12 +95,20 @@ const Hero = () => {
             <motion.img
               src="/images/hero2.webp"
               alt="hero image"
+              width="276"
+              height="284"
+              loading="lazy"
+              decoding="async"
               className="md:w-[276px] w-[163px] md:h-[284px] h-[168px] rounded-[50px] object-cover"
               variants={fadeInUp}
             />
             <motion.img
               src="/images/hero3.webp"
               alt="hero image"
+              width="276"
+              height="284"
+              loading="lazy"
+              decoding="async"
               className="md:w-[276px] w-[163px] md:h-[284px] h-[168px] rounded-[50px] object-cover"
               variants={fadeInUp}
             />
