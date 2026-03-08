@@ -42,7 +42,13 @@ const TripDetailsHeader = ({ trip }: TripDetailsHeaderProps) => {
       <div className="md:mt-12! mt-6! flex flex-wrap justify-between gap-4">
         <div className="flex-1 min-w-0">
           {/* Trip Image */}
-          {imageUrl ? (
+          {trip.landscape_images?.[0]?.url ? (
+            <img
+              src={trip.landscape_images[0].responsive_urls?.[0] || trip.landscape_images[0].url}
+              className="md:w-[789px] w-full md:h-[427px] h-[220px] rounded-[32px] object-cover"
+              alt={tripName}
+            />
+          ) : imageUrl ? (
             <img
               src={imageUrl}
               className="md:w-[789px] w-full md:h-[427px] h-[220px] rounded-[32px] object-cover"

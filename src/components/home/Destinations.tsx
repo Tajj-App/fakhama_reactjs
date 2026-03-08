@@ -170,11 +170,10 @@ const Destinations: React.FC = () => {
                 onClick={() => setActivePlaceIndex(index)}
               >
                 <div
-                  className={`relative overflow-hidden rounded-[20px] md:rounded-[50px] transition-all duration-100 w-full h-[119px] md:h-[377px] ${
-                    activePlaceIndex === index
-                      ? ""
-                      : "border-[3px] md:border-[5px] border-transparent "
-                  }`}
+                  className={`relative overflow-hidden rounded-[20px] md:rounded-[50px] transition-all duration-100 w-full h-[119px] md:h-[377px] ${activePlaceIndex === index
+                    ? ""
+                    : "border-[3px] md:border-[5px] border-transparent "
+                    }`}
                 >
                   <img
                     src={place.images?.[0]?.url}
@@ -207,11 +206,10 @@ const Destinations: React.FC = () => {
         {/* Left button = prev: disabled at isBeginning (slide 0) in both LTR and RTL */}
         {/* In RTL the icon flips to point right (→) because prev moves content rightward visually */}
         <button
-          className={`destinations-prev hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full items-center justify-center shadow-lg transition-colors -translate-x-5 ${
-            destIsBeginning
-              ? "opacity-30 cursor-not-allowed"
-              : "hover:bg-gray-100 cursor-pointer"
-          }`}
+          className={`destinations-prev hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full items-center justify-center shadow-lg transition-colors -translate-x-5 ${destIsBeginning
+            ? "opacity-30 cursor-not-allowed"
+            : "hover:bg-gray-100 cursor-pointer"
+            }`}
           aria-label="Previous destination"
           disabled={destIsBeginning}
         >
@@ -232,11 +230,10 @@ const Destinations: React.FC = () => {
         {/* Right button = next: disabled at isEnd in both LTR and RTL */}
         {/* In RTL the icon flips to point left (←) because next moves content leftward visually */}
         <button
-          className={`destinations-next hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full items-center justify-center shadow-lg transition-colors translate-x-5 ${
-            destIsEnd
-              ? "opacity-30 cursor-not-allowed"
-              : "hover:bg-gray-100 cursor-pointer"
-          }`}
+          className={`destinations-next hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full items-center justify-center shadow-lg transition-colors translate-x-5 ${destIsEnd
+            ? "opacity-30 cursor-not-allowed"
+            : "hover:bg-gray-100 cursor-pointer"
+            }`}
           aria-label="Next destination"
           disabled={destIsEnd}
         >
@@ -304,7 +301,7 @@ const Destinations: React.FC = () => {
                         {/* Background Image */}
                         <div
                           className="w-full h-[430px] md:h-[585px] bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                          style={{ backgroundImage: `url(${trip.image?.url})` }}
+                          style={{ backgroundImage: `url(${trip.portrait_images?.[0]?.url})` }}
                         />
 
                         {/* Gradient Overlay */}
@@ -365,11 +362,10 @@ const Destinations: React.FC = () => {
 
         {/* Navigation Arrows - Desktop Only */}
         <button
-          className={`trips-prev hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full items-center justify-center shadow-lg transition-colors -translate-x-5 ${
-            tripsIsBeginning
+          className={`trips-prev hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full items-center justify-center shadow-lg transition-colors -translate-x-5 ${tripsIsBeginning
               ? "opacity-30 cursor-not-allowed"
               : "hover:bg-gray-100 cursor-pointer"
-          }`}
+            }`}
           aria-label="Previous trip"
           disabled={tripsIsBeginning}
         >
@@ -388,11 +384,10 @@ const Destinations: React.FC = () => {
           </svg>
         </button>
         <button
-          className={`trips-next hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full items-center justify-center shadow-lg transition-colors translate-x-5 ${
-            tripsIsEnd
+          className={`trips-next hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full items-center justify-center shadow-lg transition-colors translate-x-5 ${tripsIsEnd
               ? "opacity-30 cursor-not-allowed"
               : "hover:bg-gray-100 cursor-pointer"
-          }`}
+            }`}
           aria-label="Next trip"
           disabled={tripsIsEnd}
         >

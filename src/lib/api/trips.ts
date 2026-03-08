@@ -71,6 +71,8 @@ export interface Trip {
   airlines: string[];
   tags: string[];
   image: MediaImage;
+  portrait_images?: MediaImage[];
+  landscape_images?: MediaImage[];
   agent_phone: string | null;
   agent_phone_country: string | null;
   agent_phone_normalized: string | null;
