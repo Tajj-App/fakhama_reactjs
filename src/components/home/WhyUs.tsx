@@ -55,11 +55,15 @@ const WhyUs = () => {
                 <img src="/images/why_us.webp" className="w-full h-full" alt="why us" />
 
                 <div className="md:w-[206px] w-[123px] md:h-[94px] h-[50px] border border-[#A8DAF1] rounded-[20px] absolute top-10 md:left-96 bg-[#FEFEFE] flex items-center justify-center gap-1">
-                    <img
-                        src="/images/star.gif"
-                        alt="star"
+                    <video
                         className="md:w-14 w-6 md:h-14 h-6"
-                    />
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                    >
+                        <source src="/images/star.webm" type="video/webm" />
+                    </video>
                     <div>
                         <h2 className="text-[#00567E] md:text-[32px] text-base font-semibold">
                             +2000
@@ -71,11 +75,17 @@ const WhyUs = () => {
                 </div>
 
                 <div className="md:w-[206px] w-[123px] md:h-[94px] h-[50px] border border-[#A8DAF1] rounded-[20px] absolute -bottom-10 md:right-96 right-56 bg-[#FEFEFE] flex items-center justify-center gap-1">
-                    <img
-                        src="/images/success.gif"
-                        alt="success"
+                    <video
                         className="md:w-14 w-6 md:h-14 h-6"
-                    />
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        width={56}
+                        height={56}
+                    >
+                        <source src="/images/success.webm" type="video/webm" />
+                    </video>
                     <div>
                         <h2 className="text-[#00567E] md:text-[32px] text-base font-semibold">
                             +2000
