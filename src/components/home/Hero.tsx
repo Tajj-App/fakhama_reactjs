@@ -82,20 +82,20 @@ const Hero = () => {
           animate="visible"
         >
           <motion.img
-            src="/images/hero1.jpg"
+            src="/images/hero1.webp"
             alt="hero image"
             className="md:w-[276px] w-[163px] md:h-[633px] h-[374px] rounded-[50px] object-cover"
             variants={fadeInUp}
           />
           <div className="flex flex-col md:gap-8 gap-4">
             <motion.img
-              src="/images/hero2.jpg"
+              src="/images/hero2.webp"
               alt="hero image"
               className="md:w-[276px] w-[163px] md:h-[284px] h-[168px] rounded-[50px] object-cover"
               variants={fadeInUp}
             />
             <motion.img
-              src="/images/hero3.jpg"
+              src="/images/hero3.webp"
               alt="hero image"
               className="md:w-[276px] w-[163px] md:h-[284px] h-[168px] rounded-[50px] object-cover"
               variants={fadeInUp}

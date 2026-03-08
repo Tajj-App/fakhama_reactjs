@@ -52,7 +52,7 @@ const WhyUs = () => {
             </div>
 
             <div className="relative">
-                <img src="/images/why_us.png" alt="why us" />
+                <img src="/images/why_us.webp" alt="why us" />
 
                 <div className="md:w-[206px] w-[123px] md:h-[94px] h-[50px] border border-[#A8DAF1] rounded-[20px] absolute top-10 md:left-96 bg-[#FEFEFE] flex items-center justify-center gap-1">
                     <img

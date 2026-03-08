@@ -149,6 +149,8 @@ const Trips: React.FC = () => {
                                     <img
                                         src={place.images?.[0]?.url}
                                         alt="place"
+                                        loading="lazy"
+                                        decoding="async"
                                         className="w-full h-full object-cover"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
