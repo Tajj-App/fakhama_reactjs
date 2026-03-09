@@ -3,7 +3,7 @@ import type { Swiper as SwiperClass } from "swiper";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Flag from "../icons/Flag";
@@ -299,10 +299,26 @@ const Destinations: React.FC = () => {
                     <Link to={`/trip-details/${trip.id}`}>
                       <div className="relative overflow-hidden rounded-[32px] md:rounded-4xl cursor-pointer group">
                         {/* Background Image */}
-                        <div
-                          className="w-full h-[430px] md:h-[585px] bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                          style={{ backgroundImage: `url(${trip.portrait_images?.[0]?.url})` }}
-                        />
+                        <Swiper
+                          modules={[Autoplay]}
+                          slidesPerView={1}
+                          autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                          }}
+                          loop={true}
+                          className="w-full h-[430px] md:h-[585px]"
+                        >
+                          {trip.portrait_images?.map((img, index) => (
+                            <SwiperSlide key={index}>
+                              <img
+                                src={img.responsive_urls?.[0] || img.url}
+                                alt={`trip-${trip.id}`}
+                                className="w-full h-full object-cover"
+                              />
+                            </SwiperSlide>
+                          ))}
+                        </Swiper>
 
                         {/* Gradient Overlay */}
                         <div
@@ -363,8 +379,8 @@ const Destinations: React.FC = () => {
         {/* Navigation Arrows - Desktop Only */}
         <button
           className={`trips-prev hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full items-center justify-center shadow-lg transition-colors -translate-x-5 ${tripsIsBeginning
-              ? "opacity-30 cursor-not-allowed"
-              : "hover:bg-gray-100 cursor-pointer"
+            ? "opacity-30 cursor-not-allowed"
+            : "hover:bg-gray-100 cursor-pointer"
             }`}
           aria-label="Previous trip"
           disabled={tripsIsBeginning}
@@ -385,8 +401,8 @@ const Destinations: React.FC = () => {
         </button>
         <button
           className={`trips-next hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full items-center justify-center shadow-lg transition-colors translate-x-5 ${tripsIsEnd
-              ? "opacity-30 cursor-not-allowed"
-              : "hover:bg-gray-100 cursor-pointer"
+            ? "opacity-30 cursor-not-allowed"
+            : "hover:bg-gray-100 cursor-pointer"
             }`}
           aria-label="Next trip"
           disabled={tripsIsEnd}
